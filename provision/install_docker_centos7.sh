@@ -9,10 +9,10 @@ sudo yum remove docker docker-common docker-selinux docker-engine
 sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 
 # Configure docker repository
-#sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 # Install Docker-ce
-sudo yum install docker-ce -y
+#sudo yum install docker-ce -y
 
 # Start Docker
 sudo systemctl start docker
@@ -24,6 +24,7 @@ sudo groupadd docker
 
 # Add user to the docker group
 sudo usermod -aG docker $USER
+sudo usermod -aG docker vagrant
 
 echo "Installation Complete -- Logout and Log back"
 
