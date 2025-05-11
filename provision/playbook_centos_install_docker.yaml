@@ -67,9 +67,10 @@
       vars:
         packages:
         - bash-completion
-        - nano
-        - mc
-        - vim 
+        - docker-ce-cli
+        - docker-compose-plugin
+        - docker-buildx-plugin
+        - containerd.io
       become: yes
 
 
